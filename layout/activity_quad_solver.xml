@@ -1,0 +1,246 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/yellowish"
+    tools:context="ethan.glick.supestotescalc.QuadSolverActivity" >
+
+    <TextView
+        android:id="@+id/aaTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/quad_solver"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/blue"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btReturnQuad"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/ret" 
+        android:background="@color/clear" 
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btSenderHomeButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/home"
+        android:background="@color/clear" 
+        android:onClick="onClick" />
+
+    <LinearLayout
+        android:id="@+id/LayoutPrimeFunctions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btSenderHomeButton"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="35dp"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/etA_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/quad_hint"
+            android:inputType="numberSigned|numberDecimal" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/etB_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/quad_hint"
+            android:inputType="numberSigned|numberDecimal" />
+
+        <EditText
+            android:id="@+id/etC_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/quad_hint"
+            android:inputType="numberSigned|numberDecimal" />
+
+        <TextView
+            android:id="@+id/tvErrorMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="40dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/LayoutAns1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tvX1ans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Button
+                android:id="@+id/btSendX1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/arrow"
+                android:visibility="invisible"
+                android:onClick="onSend" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutAns2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tvX2ans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Button
+                android:id="@+id/btSendX2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/arrow"
+                android:visibility="invisible"
+                android:onClick="onSend" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LayoutFunctions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btReturnQuad"
+        android:layout_alignTop="@+id/LayoutPrimeFunctions"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toLeftOf="@+id/LayoutPrimeFunctions"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/A"
+            android:textColor="@color/blue2"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/tvB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/B"
+            android:textColor="@color/blue2"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/tvC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/C"
+            android:textColor="@color/blue2"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="43dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/error"
+            android:textColor="@color/error_red"
+            android:visibility="invisible"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/tvX1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="@string/x1"
+            android:textColor="@color/blue"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/tvX2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="9dp"
+            android:text="@string/x2"
+            android:textColor="@color/blue"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btReset"
+        android:layout_width="300dp"
+        android:layout_height="65dp"
+        android:layout_below="@+id/LayoutPrimeFunctions"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:orientation="horizontal" >
+    <Button
+        android:id="@+id/btCalculate"
+        android:layout_width="230dp"
+        android:layout_height="65dp"
+        android:text="@string/calculate" 
+        android:background="@color/orange" 
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:onClick="onClickCalculate"/>
+
+    <Button
+        android:id="@+id/btClearPrime"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/reset"
+        android:background="@color/brightYellow" 
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        android:onClick="onClickClear" />
+
+    </LinearLayout>
+
+</RelativeLayout>

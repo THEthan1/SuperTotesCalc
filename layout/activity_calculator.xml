@@ -1,0 +1,342 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="ethan.glick.supestotescalc.CalculatorActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+        <Button
+            android:id="@+id/btQ_Function"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="270dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/q_formula"
+            android:onClick="exitOptions" />
+
+        <Button
+            android:id="@+id/btCalcHome"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="90dp"
+            android:layout_height="42dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/yellowish"
+            android:onClick="exitOptions"
+            android:text="@string/home" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvCalcView"
+        android:layout_width="360dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/yellowish"
+        android:textSize="50sp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCalcView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/level0"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="360dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btClear"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:background="@color/red"
+                android:onClick="OnClear"
+                android:text="@string/clear"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btSqrt"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:background="@color/orange"
+                android:onClick="OpSelect"
+                android:text="@string/sqrt"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btPwr"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:background="@color/orange"
+                android:onClick="OpSelect"
+                android:text="@string/pwr"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btPercent"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:background="@color/orange"
+                android:onClick="OpSelect"
+                android:text="@string/percent"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/level1"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="360dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btDelete"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:background="@color/red"
+                android:onClick="backspace"
+                android:text="@string/backspace"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btPi"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:background="@color/orange"
+                android:text="@string/pi"
+                android:textSize="30sp" />
+            
+            <Button
+                android:id="@+id/btSign"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:background="@color/orange"
+                android:onClick="setSign"
+                android:text="@string/P_M"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btDivide"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:background="@color/orange"
+                android:onClick="OpSelect"
+                android:text="@string/divide"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/level2"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="360dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/bt7"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/yellowish"
+                android:text="@string/_7"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/bt8"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/yellowish"
+                android:text="@string/_8"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/bt9"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/yellowish"
+                android:text="@string/_9"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btMultiply"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/orange"
+                android:onClick="OpSelect"
+                android:text="@string/multiply"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/level3"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="360dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/bt4"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/yellowish"
+                android:text="@string/_4"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/bt5"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/yellowish"
+                android:text="@string/_5"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/bt6"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/yellowish"
+                android:text="@string/_6"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btMinus"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/orange"
+                android:onClick="OpSelect"
+                android:text="@string/minus"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/level4"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="360dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/bt1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/yellowish"
+                android:text="@string/_1"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/bt2"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/yellowish"
+                android:text="@string/_2"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/bt3"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/yellowish"
+                android:text="@string/_3"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btPlus"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@color/orange"
+                android:onClick="OpSelect"
+                android:text="@string/plus"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/level5"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="360dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/bt0"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="181dp"
+                android:layout_height="45dp"
+                android:background="@color/yellowish"
+                android:text="@string/_0"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btDecimal"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:background="@color/yellowish"
+                android:onClick="setDecimal"
+                android:text="@string/dot"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btEquals"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:background="@color/orange"
+                android:onClick="OnEquals"
+                android:text="@string/equals"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

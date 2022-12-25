@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/HomeScreenLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="0dp"
+    android:background="@color/yellowish"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ethan.glick.supestotescalc.HomeScreenActivity" >
+
+    <LinearLayout
+        android:id="@+id/HomeScreenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+        
+        <TextView
+     	    android:id="@+id/tvHomeTitle"
+     	    android:layout_width="wrap_content"
+     	    android:layout_height="wrap_content"
+     	    android:layout_marginTop="0dp"
+        	android:textSize="15sp" 
+        	android:textColor="@color/blue2"
+        	android:text="@string/welcome"
+        	android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/tvTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="@string/home_title"
+            android:textColor="@color/red"
+            android:textSize="40sp" />
+    </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/HomeScreenList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/HomeScreenTitle"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btCalculator"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/calculator"
+            android:textSize="20sp" 
+            android:background="@color/orange"
+            android:textColor="@color/blue"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btPrimes"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/primes"
+            android:textSize="20sp"
+            android:background="@color/orange"
+            android:textColor="@color/blue"
+            android:onClick="onClick" />
+
+        <Button
+            android:id="@+id/btQgame"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/Q_game"
+            android:textSize="20sp"
+            android:background="@color/orange"
+            android:textColor="@color/blue"
+            android:onClick="onClick" />
+
+        <Button
+            android:id="@+id/btInstructions"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/instructions"
+            android:textSize="20sp" 
+            android:background="@color/orange"
+            android:textColor="@color/blue"
+            android:onClick="onClick"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btCamera"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/camera"
+        android:longClickable="true"
+        android:onClick="getPhoto" />
+
+</RelativeLayout>
